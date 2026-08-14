@@ -58,7 +58,9 @@ io.input_write([1, 2, 3])            # 写入 1 2 3
 io.output_write(1, 2, [1, 2, 3], [4])
 io.input_write(1, 2, 3, separator=',')   # 注意尾部会多一个逗号
 io.output_gen("~/Documents/std")     # 执行命令/二进制，stdin 送入输入，stdout 作为输出
-io.output_gen("C:\\Users\\Aqours\\std.exe")
+io.output_gen("C:\\Users\\Aqours\\std.exe")   # Windows
+io.output_gen("./std")               # Linux/macOS 编译产物
+io.output_gen("python3 std.py")      # Linux/macOS 下执行 Python 标程
 ```
 
 ## 图 Graph

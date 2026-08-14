@@ -1,6 +1,6 @@
 # DSH 动态插件：OJ 练习题数据生成器
 
-本目录是该项目的 DeepSeek Harness（DSH）动态 Cordis 插件源码，当前运行实例为 `ojgen-1/pkg-5`。
+本目录是该项目的 DeepSeek Harness（DSH）动态 Cordis 插件源码，当前运行实例为 `ojgen-1/pkg-7`。
 
 ## 组成
 
@@ -34,7 +34,8 @@
 - `pkg-2`：修复 parameters（隐式参数根必须开放）；
 - `pkg-3`：修复 output.schema（ValueSchemaSpec DSL：逐属性 `required:true`）；
 - `pkg-4`：默认目录优先会话 cwd（`Session.header.cwd`）；
-- `pkg-5`：路径对齐 `ojgen-project` 布局（当前）。
+- `pkg-5`：路径对齐 `ojgen-project` 布局；
+- `pkg-7`：跨平台支持（Python 启动候选 `python`/`python3`/`py`；内嵌核心同步 1.1.0：UTF-8 输出流 + manifest 路径统一正斜杠）（当前）。
 
 ## 开发注意（DSH 动态插件约束）
 

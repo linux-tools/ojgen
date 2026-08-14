@@ -181,4 +181,5 @@ print(json.dumps(ans, separators=(",", ":")))
 - 每个用例文件末尾保留一个换行；拼接文件中用例间不留空行（EOF 模式）。
 - 标程输出不得有行末多余空格（部分平台严格逐字节比对）。
 - 浮点按题面保留位数输出（如 `print(f"{x:.6f}")`），避免 `-0.0` 与科学计数法。
+- 标程命令按平台书写：Windows `python std.py` / `std.exe`，Linux/macOS `python3 std.py` / `./std`（框架按平台自动适配，见 SKILL.md 环境准备）。
 - 更多细节见 `data-quality.md`。

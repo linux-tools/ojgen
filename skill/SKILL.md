@@ -35,6 +35,8 @@ agent_created: true
 pip install cyaron      # Python >= 3.8；大量数据建议用 PyPy 运行
 ```
 
+Windows / Linux / macOS 通用。执行脚本时注意命令名差异：Linux/macOS 常用 `python3`，Windows 常用 `python`/`py`（标程命令同理，如 `gen.auto_output("python3 std.py")`）。
+
 若无法使用 pip，可下载源码压缩包（<https://github.com/luogu-dev/cyaron/archive/master.zip>），解压后在根目录编写生成器脚本。
 
 标程（参考解答）是可选但强烈推荐：普通判题用 `gen.auto_output("python std.py")` 生成 `.out`，比手写答案可靠。

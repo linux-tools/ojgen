@@ -1,5 +1,5 @@
 // OJ 练习题数据生成器 —— DSH 动态 Cordis 插件 · Host 半区
-// 来源：ojgen-1/pkg-5（当前运行版本，DSH 动态插件）
+// 来源：ojgen-1/pkg-7（当前运行版本，DSH 动态插件）
 // 说明：本文件是 cordis_define 的 code.host 函数体（return { apply(ctx) {...} }），
 // 配合同目录 client.js 作为 code.client 重新定义后，经 cordis_run 激活。
 // 依赖：ctx.get('fs') / ctx.get('subprocess') / ctx.get('sandboxPolicy')（均为可选，缺省时报错）；
@@ -39,11 +39,18 @@ import time
 
 from cyaron import *  # noqa: F401,F403  提供 randint、Graph、String 等
 
+# 统一控制台/管道输出为 UTF-8（Windows GBK 控制台、CI 管道、跨平台一致）
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001  旧版本无 reconfigure 时忽略
+        pass
+
 STDIN_PLATFORMS = {"hdu", "poj", "zoj", "nowcoder"}
 SERIAL_PLATFORMS = {"leetcode", "nowcoder_core"}
 ALL_PLATFORMS = {"luogu"} | STDIN_PLATFORMS | SERIAL_PLATFORMS
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 def _fmt(x):
@@ -213,7 +220,7 @@ class Gen:
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             with open(dst, "wb") as f:
                 f.write(data)
-            files.append(os.path.relpath(dst, self.out_dir))
+            files.append(os.path.relpath(dst, self.out_dir).replace(os.sep, "/"))
             return dst
 
         if self.platform == "luogu":
@@ -334,11 +341,11 @@ class Gen:
     async function resolvePython() {
       if (subprocess === undefined) throw new Error('subprocess 服务不可用，无法运行 Python')
       let lastErr = null
-      const candidates = ['python', 'py']
+      const candidates = ['python', 'python3', 'py']
       for (let k = 0; k < candidates.length; k++) {
         try { return await subprocess.resolveExecutable(candidates[k], PY_ENV) } catch (err) { lastErr = err }
       }
-      throw new Error('未找到 python 可执行文件: ' + (lastErr && lastErr.message ? lastErr.message : 'python/py 均不在 PATH'))
+      throw new Error('未找到 python 可执行文件: ' + (lastErr && lastErr.message ? lastErr.message : 'python/python3/py 均不在 PATH'))
     }
 
     async function runPython(argv, cwd) {

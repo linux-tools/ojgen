@@ -32,11 +32,18 @@ import time
 
 from cyaron import *  # noqa: F401,F403  提供 randint、Graph、String 等
 
+# 统一控制台/管道输出为 UTF-8（Windows GBK 控制台、CI 管道、跨平台一致）
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001  旧版本无 reconfigure 时忽略
+        pass
+
 STDIN_PLATFORMS = {"hdu", "poj", "zoj", "nowcoder"}
 SERIAL_PLATFORMS = {"leetcode", "nowcoder_core"}
 ALL_PLATFORMS = {"luogu"} | STDIN_PLATFORMS | SERIAL_PLATFORMS
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 def _fmt(x):
@@ -216,7 +223,7 @@ class Gen:
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             with open(dst, "wb") as f:
                 f.write(data)
-            files.append(os.path.relpath(dst, self.out_dir))
+            files.append(os.path.relpath(dst, self.out_dir).replace(os.sep, "/"))
             return dst
 
         if self.platform == "luogu":

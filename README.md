@@ -1,7 +1,5 @@
 # OJ 练习题多平台数据生成器（ojgen-project）
 
-> 本人第一次使用deepseek harness把之前我做的一半的东西给做好了，可能还是会有不完善的地方，需要大家尽可能反馈问题
-
 借助 Python + [CYaRon](https://github.com/luogu-dev/cyaron) 为多个 OJ 平台生成算法练习题的测试数据。
 
 - 开源许可：[MIT](LICENSE)
@@ -17,7 +15,7 @@
 | 牛客（核心代码模式） | `nowcoder_core` | `testcases.txt` + `answers.txt`（参数逐行 JSON 序列化） |
 | LeetCode | `leetcode` | `testcases.txt` + `answers.txt`（参数逐行 JSON 序列化） |
 
-暂时不支持交互题与通信题，不过应该会变得更快吧
+不支持交互题与通信题。
 
 ## 目录结构
 
@@ -54,6 +52,8 @@ ojgen-project/
 ```bash
 pip install cyaron      # Python >= 3.8；大数据建议 PyPy
 ```
+
+Windows / Linux / macOS 均可。执行脚本时注意命令名差异：Linux/macOS 常用 `python3`，Windows 常用 `python`/`py`（标程命令同理，如 `python3 std.py`）。
 
 ### 2. 编写生成器
 
@@ -105,3 +105,11 @@ python gen_xxx.py
 - 数据必须满足题面全部约束（写 validator 校验）；
 - 答案优先用标程生成，标程先过样例再跑全量；
 - seed 固定可复现；全部文件 LF 换行、UTF-8、无尾随空格、末尾换行。
+
+## 跨平台支持
+
+- **环境**：Windows / Linux / macOS 通用（Python >= 3.8 + cyaron，纯 Python 无平台依赖）；
+- **命令差异**：框架与示例脚本自动适配；`auto_output` 的标程命令按平台书写（`python std.py` / `python3 std.py` / `std.exe` / `./std`）；
+- **数据一致性**：统一 LF 换行、UTF-8 编码；`manifest.json` 内文件路径一律正斜杠 `/`；Windows GBK 控制台乱码已内置 UTF-8 重配置；
+- **DSH 插件**：自动探测 `python` / `python3` / `py` 启动器，跨平台运行（详见 `plugin/`）；
+- **发布脚本**：Windows 用 `publish-to-github.ps1`，Linux/macOS 用 `publish-to-github.sh`（均支持 gh CLI 或 PAT）。

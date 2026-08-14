@@ -1,5 +1,5 @@
 {
-  "tool": "ojgen 1.0.0",
+  "tool": "ojgen 1.1.0",
   "platform": "zoj",
   "problem_id": "1001",
   "n_cases": 2,
@@ -7,10 +7,10 @@
   "std": null,
   "generated_at": "2026-08-15 03:06:39",
   "files": [
-    "cases\\1.in",
-    "cases\\1.out",
-    "cases\\2.in",
-    "cases\\2.out",
+    "cases/1.in",
+    "cases/1.out",
+    "cases/2.in",
+    "cases/2.out",
     "1001.in",
     "1001.out"
   ]
