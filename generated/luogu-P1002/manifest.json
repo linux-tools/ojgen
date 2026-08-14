@@ -1,0 +1,15 @@
+{
+  "tool": "ojgen 1.0.0",
+  "platform": "luogu",
+  "problem_id": "P1002",
+  "n_cases": 2,
+  "seed": 5,
+  "std": null,
+  "generated_at": "2026-08-15 03:20:00",
+  "files": [
+    "P1002-1.in",
+    "P1002-1.out",
+    "P1002-2.in",
+    "P1002-2.out"
+  ]
+}

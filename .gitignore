@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 构建产物（可重新打包）
+dist/
+
+# 插件运行期写入生成目录的临时副本（样例数据本身保留提交）
+generated/*/ojgen.py
+generated/*/gen_*.py
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 凭据（切勿提交）
+*.token
+.env

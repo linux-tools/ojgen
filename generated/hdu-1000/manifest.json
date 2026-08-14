@@ -1,0 +1,19 @@
+{
+  "tool": "ojgen 1.0.0",
+  "platform": "hdu",
+  "problem_id": "1000",
+  "n_cases": 3,
+  "seed": 20260815,
+  "std": null,
+  "generated_at": "2026-08-15 03:02:25",
+  "files": [
+    "cases\\1.in",
+    "cases\\1.out",
+    "cases\\2.in",
+    "cases\\2.out",
+    "cases\\3.in",
+    "cases\\3.out",
+    "1000.in",
+    "1000.out"
+  ]
+}

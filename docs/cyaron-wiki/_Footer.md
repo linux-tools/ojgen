@@ -1,0 +1,1 @@
+Project CYaRon by [Luogu](https://www.luogu.org), licensed under LGPLv3. [贡献者名单](https://github.com/luogu-dev/cyaron/wiki/%E5%85%89%E8%8D%A3%E6%A6%9C)
