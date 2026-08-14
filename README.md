@@ -1,5 +1,7 @@
 # OJ 练习题多平台数据生成器（ojgen-project）
 
+> 本人第一次使用deepseek harness把之前我做的一半的东西给做好了，可能还是会有不完善的地方，需要大家尽可能反馈问题
+
 借助 Python + [CYaRon](https://github.com/luogu-dev/cyaron) 为多个 OJ 平台生成算法练习题的测试数据。
 
 - 开源许可：[MIT](LICENSE)
