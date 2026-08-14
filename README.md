@@ -17,7 +17,7 @@
 | 牛客（核心代码模式） | `nowcoder_core` | `testcases.txt` + `answers.txt`（参数逐行 JSON 序列化） |
 | LeetCode | `leetcode` | `testcases.txt` + `answers.txt`（参数逐行 JSON 序列化） |
 
-不支持交互题与通信题。
+暂时不支持交互题与通信题，不过应该会变得更快吧
 
 ## 目录结构
 
