@@ -2,6 +2,9 @@
 
 借助 Python + [CYaRon](https://github.com/luogu-dev/cyaron) 为多个 OJ 平台生成算法练习题的测试数据。
 
+- 开源许可：[MIT](LICENSE)
+- 发布脚本：`publish-to-github.ps1`（在本机执行，创建 GitHub 仓库并推送）
+
 ## 支持平台与输出格式
 
 | 平台 | 生成器参数 | 交付格式 |
