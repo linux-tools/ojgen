@@ -4,8 +4,7 @@ __pycache__/
 .venv/
 venv/
 
-# 构建产物（可重新打包）
-dist/
+# 构建产物：dist/ 下的 skill 打包 zip 是交付物，随仓库提交（重新打包时覆盖即可）
 
 # 插件运行期写入生成目录的临时副本（样例数据本身保留提交）
 generated/*/ojgen.py
